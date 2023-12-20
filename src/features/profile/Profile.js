@@ -6,10 +6,10 @@ import { useParams } from "react-router-dom"
 import { selectAllUsers, useUpdateUserBioMutation, useUpdateUserMutation } from "../main/posts/userApiSlice"
 import Nav from "../nav/Nav"
 import UserPosts from "./UserPosts"
-
+import useGetURL from '../../hooks/useGetURL'
 
 const Profile = () => {
-  
+  const url = useGetURL()
     const users = useSelector(selectAllUsers)
     const [updateUser , {isLoading}] = useUpdateUserMutation()
     const [updateUserBio , {isLoading:isBioLoading}] = useUpdateUserBioMutation()
@@ -95,7 +95,7 @@ const Profile = () => {
     <form onSubmit={setImgFunc} style={{marginTop:"7rem" , width:"100%" , display:"flex" , flexDirection:"column" ,justifyContent:"center" , alignItems:"center"}}>
         
         <div style={{maxWidth:"100px" , maxHeight:"100px" , borderRadius:"50%" , overflow:"hidden"}} className='img-cont-profile'>
-            <img style={{display:"block" , maxWidth:"100%"}} src={`http://localhost:3500/${user?.profile}`} alt='profile' />
+            <img style={{display:"block" , maxWidth:"100%"}} src={`${url}/${user?.profile}`} alt='profile' />
         </div>
         <p>{user?.username}</p>
         <p>{user?.bio}</p>
