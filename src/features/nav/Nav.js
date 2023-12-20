@@ -12,9 +12,11 @@ import SearchResult from "./SearchResult"
 import { Link, useNavigate } from 'react-router-dom'
 import Modal from './Modal'
 import useSocket from '../../hooks/useSocket'
+import useGetURL from '../../hooks/useGetURL'
 
 const Nav = () => {
 
+    const url = useGetURL()
     const auth = useAuth()
     const user = useSelector(state => selectUserById(state, auth?.userId))
     const socket = useSocket()
@@ -86,7 +88,7 @@ const Nav = () => {
                     <li onClick={() => navigate(`/${auth?.username}`)}><FontAwesomeIcon icon={faHome} /> </li>
                     <li onClick={openmodal}><FontAwesomeIcon icon={faPlusCircle} /> </li>
                     <li><FontAwesomeIcon icon={faHeart} /> </li>
-                    <li><Link className='account' /* reloadDocument */ to={`/${auth?.username}/profile`}><img src={`http://localhost:3500/${user?.profile}`} alt='profile' /></Link></li>
+                    <li><Link className='account' /* reloadDocument */ to={`/${auth?.username}/profile`}><img src={`${url}/${user?.profile}`} alt='profile' /></Link></li>
                 </ul>
                 <button className={`send-btn`} onClick={()=> navigate(`/${auth?.username}/message`)}>
                     <FontAwesomeIcon icon={faPaperPlane} style={{fontSize:"1.25rem"}}/>
