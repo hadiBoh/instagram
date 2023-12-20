@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 import { useLogoutMutation } from "../auth/authApiSlice"
 import { selectUserById } from "./posts/userApiSlice"
-
+import useGetURL from "../../hooks/useGetURL"
 
 const SideBar = () => {
 
+    const url = useGetURL()
     const {userId} = useAuth()
     const user =  useSelector(state => selectUserById(state , userId))
     const navigate = useNavigate()
@@ -26,7 +27,7 @@ const SideBar = () => {
     return (
         <div className='side-wrapper'>
             <header>
-                <div><img src={`http://localhost:3500/${user?.profile}`} alt='profile' /></div>
+                <div><img src={`${url}/${user?.profile}`} alt='profile' /></div>
                 <div>
                     <h3>{user?.username}</h3>
                     <p>welcome to instagram</p>
