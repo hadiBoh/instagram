@@ -3,7 +3,7 @@ import { setAuth } from "../features/auth/authSlice";
 
 
 const baseQuery =  fetchBaseQuery({
-    baseUrl:'https://instagram-api-fc0p.onrender.com',
+    baseUrl:'https://instagram-api-fc0p.onrender.com/',
     credentials:"include",
     prepareHeaders:(headers , {getState})=>{
         const token = getState().auth.auth.accessToken
