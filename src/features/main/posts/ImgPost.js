@@ -15,7 +15,7 @@ const ImgPost = ({postId}) => {
     /* const post = useSelector(state => selectUserPostById(state , postId)) */
     return (
         <section className='post-img'>
-            <img src={`${url}//${post?.img}`} alt='post img' />
+            <img src={`${url}/${post?.img}`} alt='post img' />
         </section>
     )
 }
