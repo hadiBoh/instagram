@@ -1,7 +1,7 @@
 
 const useGetURL = () => {
     /* const url = 'https://instagramrest.onrender.com' */
-    const url = 'http://localhost:3500'
+    const url = 'https://instagram-api-fc0p.onrender.com'
   return url
 }
 
