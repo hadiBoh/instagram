@@ -1,0 +1,234 @@
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 999;
+}
+.nav svg{
+    cursor: pointer;
+}
+.nav-right-section{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.nav-right-section button{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.nav-right-section .drop-btn{
+    font-size: var(--font-size-4);
+}
+.nav-right-section .account{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.nav-right-section .account img{
+    max-width: 100%;
+    display: block;
+}
+.nav-right-section ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-right-section ul li{
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+    display: flex;
+}
+.drop-btn{
+    display: none;
+}
+.instagram-icon {
+    background-image: url('https://static.cdninstagram.com/rsrc.php/v3/yr/r/NL0hPV-L09m.png');
+    background-position: 0px 5px;
+    background-size: 100px 116px;
+    width: 104px;
+    height: 37px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.nav-center-section{
+    height: 100%;
+    position: relative;
+    background: lightgoldenrodyellow;
+}
+.nav-center-section input{
+    width: 100%;
+    height: 100%;
+    min-height: 35px;
+    padding-left: 2rem;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.nav-center-section svg{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: #ccc;
+}
+.nav-left-section i{
+    font-size: var(--font-size-7);
+    color: #333;
+}
+
+ /* sarch result */
+
+ .search-result.active{
+    transform: scaleY(1);
+ }
+
+ .search-result{
+    background: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 200ms ease;
+ }
+.searchRes{
+    text-decoration: none;
+    padding: 0.5rem 0.5rem;
+    color: #333;
+}
+.send-btn{
+    position: relative;
+}
+.send-btn .notif{
+    display: none;
+}
+.send-btn .notif.hasDirect{
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    background: rgb(248, 48, 48);
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media (max-width:767px){
+    .nav-right-section ul{
+        position: absolute;
+        left: 0;
+        transform: translateY(-100%);
+        width: 100%;
+        top: 100vh;
+        background: rgb(242, 241, 241);
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        box-shadow: var(--box-shadow);
+    }
+    .nav-right-section ul.active{
+        display: block;
+    }
+    .drop-btn{
+        display: block;
+    }
+}
+
+
+
+/* modal */
+
+.modal-Wrapper{
+    display: none;
+    background: rgb(50, 50, 50 , 0.3);
+    transition: scale 300ms ease;
+    position: absolute;
+}
+
+.modal-Wrapper.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1024;
+}
+.modal{
+    box-shadow: var(--box-shadow);
+    width: 320px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+.modal-x-btn{
+    background: none;
+    font-size: 4rem;
+    outline: none;
+    border: none;
+    padding: 1rem 2rem;
+    color: rgb(168, 37, 37);
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.modal-x-btn:hover svg{
+    font-size: 4.5rem;
+}
+.imgSection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgSection button{
+    font-size: 4rem;
+    color: #555;
+    transition: all 200ms ease;
+}
+.imgSection button:hover{
+    color: rgb(241, 18, 115);
+}
+.post-add-btn-section{
+    display: flex;
+    flex-direction: column;
+}
+.post-btn{
+    background: rgb(219, 11, 63) !important;
+    color: #fff;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 7px;
+}
+.imgSection img{
+    display: block;
+    max-width: 100%;
+}
